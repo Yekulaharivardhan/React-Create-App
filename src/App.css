@@ -1,0 +1,90 @@
+:root{
+  --nav-height:3.5rem;
+  --gray-bg-color:rgb(248, 249, 250);
+  --scrollbar-color:rgba(138, 138, 138, 0.795);
+}
+
+.side_content{
+  max-height: calc(100vh - var(--nav-height));
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: fixed;
+  top: var(--nav-height);
+  height: calc(100vh - (var(--nav-height)));
+  background-color: var(--gray-bg-color);
+  z-index: 1020;
+  width:55px;
+  transition: width 0.5s ease-in-out;
+  border-right: 1px solid lightgray;
+  border-top: 1px solid lightgray;
+}
+.navbar_main{
+  border-bottom: 1px solid lightgray;
+}
+.side_content:hover{
+  width: 250px;
+}
+.sidebar_text_style{
+  font-size: 18px;
+  padding-top: 7px;
+  padding-bottom: 5px;
+ 
+  
+}
+.main_content{
+  margin-left: 48px;
+}
+.ActionListContent{
+  display: flex;
+  text-align: left;
+  touch-action: manipulation;
+  transition: background-color 33.333ms linear;
+  -webkit-user-select: none;
+  user-select: none;
+  width: 100%;
+  -webkit-tap-highlight-color: transparent;
+  align-items: center;
+}
+.ActionListContent>:not(:last-child) {
+  margin-right: var(--control-medium-gap, 0.5rem);
+}
+.ActionListItem-visual {
+  display: flex;
+  pointer-events: none;
+  align-items: center;
+  color: rgb(75, 76, 78);
+}
+.ActionListItem-visual--leading {
+  grid-area: leadingVisual;
+  font-size: 23px;
+}
+.ActionListItem-label {
+  opacity: 0;
+  transition: opacity 0.4s ease-out;
+}
+.side_content:hover .ActionListItem-label {
+  opacity: 1;
+}
+.sidebar_main{
+  display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    padding: 10px 0px;
+    box-sizing: border-box;
+}
+.sidebar_main .first_child{
+  cursor: pointer;
+}
+
+::-webkit-scrollbar{
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-color);  
+  border-radius: 6px; 
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f0f0f0;  
+}
